@@ -1,6 +1,7 @@
-import { Box, Container, Typography } from "@mui/material";
+import { BottomNavigation, BottomNavigationAction, Box, Container, Paper, Typography } from "@mui/material";
 import ImageCollage from "../components/ImageCollage";
 import CustomizedAccordions from "../components/Accordian";
+import BasicModal from "../components/Modal";
 
 function Tour() {
   return (
@@ -9,7 +10,7 @@ function Tour() {
     <Typography variant="h3" component="h1" marginTop={3}>
         Explore the world in Vegas
     </Typography>
-<Box marginTop={3} sx={{display:"flex"}}>
+<Box marginTop={3} sx={{display:"flex"}} marginBottom={10}>
 <img src="https://media.timeout.com/images/105124791/750/422/image.jpg" alt=""
 height={325}/>
 <ImageCollage/>
@@ -34,7 +35,13 @@ height={325}/>
     </Typography>
     <CustomizedAccordions/>
 </Box>
-
+<Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
+        <BottomNavigation
+          
+        >
+            <BasicModal/>
+        </BottomNavigation>
+      </Paper>
 </Container>
   );
 }
